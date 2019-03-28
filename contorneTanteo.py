@@ -30,8 +30,8 @@ canny = cv2.Canny(gaussiana, lower, upper)
 x=5
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (x,x))
 dilation = cv2.dilate(canny,kernel,iterations = 1)
-#cv2.imshow("Dilatado", dilation)
-#cv2.waitKey(0)
+cv2.imshow("Dilatado", dilation)
+cv2.waitKey(0)
 
 #buscamos los contornos
 (_,contornos,_) = cv2.findContours(dilation.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
